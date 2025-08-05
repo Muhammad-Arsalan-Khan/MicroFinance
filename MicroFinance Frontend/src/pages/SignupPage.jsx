@@ -55,10 +55,12 @@ const SignupForm = () => {
         data
       )
       const userId = response.data.data
-      setUserId(userId);
+      const useremail = response.data.email
+      localStorage.setItem("mic_email", useremail)
+      setUserId(userId)
       setSnackbar({
         open: true,
-        message: "Signup successful! Please verify OTP.",
+        message: "Signup successful! Please verify OTP",
         severity: "success",
       });
       setShowModal(true)

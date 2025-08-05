@@ -19,11 +19,12 @@ const modalStyle = {
 };
 
 const OtpModal = ({ onClose, userId, page }) => {
-  console.log("page", page);
+  // console.log("page", page);
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
+  const email = localStorage.getItem("mic_email")
 
   const handleVerify = async () => {
     if (!/^\d{4,6}$/.test(otp)) {
@@ -39,13 +40,13 @@ const OtpModal = ({ onClose, userId, page }) => {
       //   isVerified: true,
       //   otpValue: otp,
       // }) 
-      const res = await axios.patch(`${config.baseURL}/api/otp/${id}`, { isVerified: true,otpValue: otp},
+      const res = await axios.patch(`${config.baseURL}/api/otp/${id}`, { email , otp},
       {
         headers : {
         Authorization: `Bearer ${Cookies.get("token")} `
       }
       }
-    ) 
+    )
       if (res.status == 200) {
         if (page === "login") {
           toast.success(
@@ -63,6 +64,7 @@ const OtpModal = ({ onClose, userId, page }) => {
         }, 1500)
       }
       setLoading(false)
+      localStorage.removeItem("mic_email")
     } catch (err) {
       setLoading(false)
       setError(err.response?.data?.message || "OTP verification failed")
