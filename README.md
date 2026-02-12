@@ -1,6 +1,6 @@
 # Microfinance Loan Application – Full Stack (Sood Se Pak)
 
-This is a full-stack interest-free **Microfinance Loan System** built for *Sood Se Pak*. It enables users to apply for loans, upload documents, track application status, and download loan details. Admin functionalities are integrated for appointment settings and loan approvals.
+This is a full-stack interest-free **Microfinance Loan System** built for *Sood Se Pak*. It enables users to apply for loans, upload documents, track application status, and download loan details. Admin functionalities are integrated for appointment settings and loan approvals.The system is designed to ensure transparency, efficiency, and a seamless digital experience for both users and administrators
 
 🔗 **Live Link**: [https://microfinanc.netlify.app](https://microfinanc.netlify.app)
 
