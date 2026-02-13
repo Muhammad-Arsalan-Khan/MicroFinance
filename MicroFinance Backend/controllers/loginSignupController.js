@@ -134,7 +134,7 @@ async function signup(req, res) {
   }
 }
 
-async function OTP(req, res) {
+async function otp(req, res) {
   try {
     const userId = req.params.id
     const { email , otp } = req.body
@@ -189,4 +189,4 @@ async function OTP(req, res) {
   }
 }
 
-export { login, signup, OTP }
+export { login, signup, otp }
